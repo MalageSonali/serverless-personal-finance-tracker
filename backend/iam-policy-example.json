@@ -1,0 +1,14 @@
+{
+  "_note": "Attach per function (least privilege). Replace REGION and ACCOUNT_ID. CreateTransaction needs only PutItem; List needs only Query; etc.",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["dynamodb:PutItem", "dynamodb:Query", "dynamodb:UpdateItem", "dynamodb:DeleteItem"],
+      "Resource": [
+        "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/FinanceTransactions",
+        "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/FinanceBudgets"
+      ]
+    }
+  ]
+}
